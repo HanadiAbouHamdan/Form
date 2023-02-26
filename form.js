@@ -30,6 +30,7 @@ function validateForm(){
     const resultElement2=document.getElementById("result3");
     const word_vowel_check=document.getElementById("str4").value;
     const resultElement3=document.getElementById("result4");
+    const resultElement4=document.getElementById("result5");
 
 
 
@@ -72,8 +73,11 @@ function validateForm(){
     const modified_word = word_vowel_check.slice(vowel_index) + word_vowel_check.slice(0,vowel_index) + "ay"
 
     resultElement3.textContent="The new word is "+modified_word;
-
-
+    
+    
+    var ipAddress = location.hostname;
+    console.log('IP address:', ipAddress);
+    resultElement4.textContent="The IP address is: "+ipAddress;
 }
 
 
@@ -166,4 +170,5 @@ function vowelindex(word){
 return -1;
 
 }
+
 
