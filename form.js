@@ -29,6 +29,13 @@ function validateForm(){
     const result=document.getElementById("result1");
     const age1=parseInt(document.getElementById("age").value);
     const resultElement=document.getElementById("result2");
+    const another_variable=document.getElementById("str2").value;
+    const resultElement2=document.getElementById("result3");
+   
+
+
+
+
 
     if(!enterpassword() || !emailvalidation()){
     return false;
@@ -64,7 +71,10 @@ else{
     resultElement.textContent=`Your age is ${age1} and its not prime`;
 }
 
+    var str3=reverseString(another_variable);
+    return resultElement2.textContent="The reverse of this is string is:"+str3;
 }
+
 
 
 function mergesort(array){
@@ -124,4 +134,15 @@ registerForm.addEventListener('submit', function(e){
         if(nb%j===0){return false;}
     }
     return true;
+  }
+
+  //reversing the second string
+  function reverseString(){
+    const another_variable=document.getElementById("str2").value;
+    var var3="";
+    for(let i=another_variable.length-1;i>=0;i--){
+        var3 += another_variable[i];
+    }
+    return var3;
+
   }
