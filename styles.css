@@ -145,6 +145,13 @@ section{
     margin-left:-6px;
     margin-bottom: 20px;
 }
+.inputbox6 label{
+    margin:5px;
+}
+.inputbox6 input{
+    margin-left:-6px;
+    margin-bottom: 20px;
+}
 
 .forget{
     display:flex;

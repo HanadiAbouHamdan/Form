@@ -1,7 +1,4 @@
 
-
-
-
 function enterpassword(){
     const psw=document.getElementById("psw1").value;
     const psw_check= /^(?=.*[A-Z])(?=.*[\W])(?=.{8,})/;
@@ -31,8 +28,8 @@ function validateForm(){
     const resultElement=document.getElementById("result2");
     const another_variable=document.getElementById("str2").value;
     const resultElement2=document.getElementById("result3");
-   
-
+    const word_vowel_check=document.getElementById("str4").value;
+    const resultElement3=document.getElementById("result4");
 
 
 
@@ -51,28 +48,32 @@ function validateForm(){
     if(!ispalindrom(string1)){
         
     result.textContent=`"${string1}" is not palindrome!`;}
-    
-    result.textContent=`"${string1}" is palindrome!`;
-
-    const numbers=[];
-    for(let i=0;i<10;i++){
-    const number=prompt(`Enter number ${i+1}`);
-    numbers.push(parseInt(number));
-}
-
-const sorting_Numbers=mergesort(numbers);
-console.log(sorting_Numbers);
+    else{
+    result.textContent=`"${string1}" is palindrome!`;}
 
 
-if(prime(age1)){
-    resultElement.textContent=`You age is ${age1} and its prime`;
-}
-else{
-    resultElement.textContent=`Your age is ${age1} and its not prime`;
-}
+    const numbers = get_numbers();
+    const sorting_Numbers=mergesort(numbers);
+    console.log(sorting_Numbers);
+
+
+    if(prime(age1)){
+        resultElement.textContent=`You age is ${age1} and its prime`;
+    }
+    else{
+        resultElement.textContent=`Your age is ${age1} and its not prime`;
+    }
 
     var str3=reverseString(another_variable);
-    return resultElement2.textContent="The reverse of this is string is:"+str3;
+    resultElement2.textContent="The reverse of this is string is:"+str3;
+
+
+    const vowel_index=vowelindex(word_vowel_check);
+    const modified_word = word_vowel_check.slice(vowel_index) + word_vowel_check.slice(0,vowel_index) + "ay"
+
+    resultElement3.textContent="The new word is "+modified_word;
+
+
 }
 
 
@@ -116,6 +117,13 @@ function ispalindrom(x){
 
     }
 
+function get_numbers(){
+    const numbers=[];
+    for(let i=0;i<10;i++){
+    const number=prompt(`Enter number ${i+1}`);
+    numbers.push(parseInt(number));}
+    return numbers;
+}
 
 var registerForm = document.getElementById('registerform');
 registerForm.addEventListener('submit', function(e){
@@ -146,3 +154,16 @@ registerForm.addEventListener('submit', function(e){
     return var3;
 
   }
+
+  //Moving the constants into the end of the word and the add ay to the end of the word
+function vowelindex(word){
+    const vowels=["a","o","u","i","e"];
+    for (let z = 0; z < word.length; z++) {
+		if (vowels.includes(word[z])) {
+			return z;
+		}
+	}
+return -1;
+
+}
+
