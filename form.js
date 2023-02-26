@@ -12,7 +12,7 @@ function enterpassword(){
 
 function emailvalidation(){
     const email_input=document.getElementById("email1").value;
-    const email_check=/^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    const email_check=/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
     if(!email_check.test(email_input)){
         alert("Email have different format!");
@@ -32,7 +32,8 @@ function validateForm(){
     const word_vowel_check=document.getElementById("str4").value;
     const resultElement3=document.getElementById("result4");
     const resultElement4=document.getElementById("result5");
-   
+    
+    
 
 
 
@@ -82,6 +83,7 @@ function validateForm(){
     resultElement4.textContent="The IP address is: "+ipAddress;
 
     getLocation();
+    
     
 }
 
@@ -188,4 +190,21 @@ function getLocation() {
   function showPosition(position) {
 
     resultElement5.textContent = "Latitude: " + position.coords.latitude +  "\n Longitude: " + position.coords.longitude;
+  }
+//scrolling the button
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+
+    const my_btn=document.getElementsById("myBtn");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    my_btn.style.display = "block";
+  } else {
+    my_btn.style.display = "none";
+  }
+}
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
