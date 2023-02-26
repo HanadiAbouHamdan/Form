@@ -1,3 +1,4 @@
+var resultElement5=document.getElementById("location");
 
 function enterpassword(){
     const psw=document.getElementById("psw1").value;
@@ -31,6 +32,7 @@ function validateForm(){
     const word_vowel_check=document.getElementById("str4").value;
     const resultElement3=document.getElementById("result4");
     const resultElement4=document.getElementById("result5");
+   
 
 
 
@@ -78,6 +80,9 @@ function validateForm(){
     var ipAddress = location.hostname;
     console.log('IP address:', ipAddress);
     resultElement4.textContent="The IP address is: "+ipAddress;
+
+    getLocation();
+    
 }
 
 
@@ -171,4 +176,16 @@ return -1;
 
 }
 
+//getting the location
+function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+      resultElement5.textContent = "Geolocation is not supported by this browser.";
+    }
+  }
+  
+  function showPosition(position) {
 
+    resultElement5.textContent = "Latitude: " + position.coords.latitude +  "\n Longitude: " + position.coords.longitude;
+  }
