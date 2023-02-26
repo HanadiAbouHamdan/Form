@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <title>Signup page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section>
+
+    <div class="signin">
+        <form id="registerform" onsubmit="return validateForm(); checkpalindrom();">
+            <h2>Sign Up</h2>
+            <div class="inputbox1">
+                <label>Email:</label>
+                <input type="email" id="email1" required name="email1">
+               
+            </div>
+            <div class="inputbox2">
+                <label>Password:</label>
+                <input type="password" id="psw1" required name="psw1">
+            </div>
+            <div class="inputbox3">
+                <label>Enter a string:</label>
+                <input type="text" id="str1">
+            </div>
+
+            <div class="inputbox4">
+                <label>Enter your age:</label>
+                <input type="text" id="age" name="age">
+            </div>
+
+
+
+            <div class="forget">
+                <label for=""><input type="checkbox">Remember Me</label>
+            </div>
+            <button class="btn" type="submit">Submit</button>
+            <p id="result1">Hi</p>
+            <p id="result2">hello</p>
+        
+        </form>
+    </div>
+</section>
+<script src="form.js"></script>
+
+</body>
